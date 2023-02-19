@@ -36,33 +36,33 @@ public:
             tail = temp;
             return;
         }
-        back->next = temp;
-        back = temp;
+        tail->next = temp;
+        tail = temp;
     }
     void pop()
     {
-        if (front == NULL)
+        if (head == NULL)
         {
             cout << "Queue underflow" << endl;
             return;
         }
-        node *toDelete = front;
-        front = front->next;
+        node *toDelete = head;
+        head = head->next;
         delete toDelete;
     }
 
     int peek()
     {
-        if (front == NULL)
+        if (head == NULL)
         {
             cout << "Queue underflow" << endl;
             return -1;
         }
-        return front->data;
+        return head->data;
     }
     bool isEmpty()
     {
-        if (front == NULL)
+        if (head == NULL)
         {
             return true;
         }
@@ -72,7 +72,7 @@ public:
 
 int main()
 {
-    Queue q;
+    queue q;
     for (int i = 0; i < 10; i++)
     {
         int x;
